@@ -1,23 +1,66 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import StatelessComponent from './StatelessComponent';
+import StatelfulComponents from './StatelfulComponents';
+import Button from './components/Button';
+import PageA from './PageA';
+import PageB from './PageB';
+import State from './State';
+import ComposeComponent from './components/ComposeComponent/ComposeComponent';
+
 
 function App() {
+  const [count, setCount] = React.useState(0); // local state of component
+
+  const user = {
+    name: 'anvacs',
+  }
+
+  const myElement = (
+    <div>
+      <>
+        my element
+      </>
+      <>
+        my element
+      </>
+    </div>
+  )
+  // UI
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <div className="App">
+        {myElement} {user.name}
+      </div>
+
+      <div>anvacs</div>
+      <div>eqewq</div>
+
+      <StatelessComponent 
+        count={count} 
+        onClick={() => setCount(count + 1)}
+      />
+
+      <Button 
+        text="Increment"
+        onClick={() => setCount(count + 1)}
+       />
+
+       <StatelfulComponents  />
+
+      <br />
+
+      <PageA />
+      <PageB />
+
+      <br />
+      <State />
+
+      <br />
+      <ComposeComponent />
+
+      <p />
     </div>
   );
 }
