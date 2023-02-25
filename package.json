@@ -11,15 +11,6 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  "devDependencies": {
-    "eslint": "^8.5.0",
-    "eslint-config-react-app": "^7.0.0",
-    "eslint-plugin-flowtype": "^8.0.0",
-    "eslint-plugin-import": "^8.0.0",
-    "eslint-plugin-jsx-a11y": "^8.0.0",
-    "eslint-plugin-react": "^8.0.0",
-    "eslint-plugin-react-hooks": "^8.0.0"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -45,3 +36,4 @@
     ]
   }
 }
+
