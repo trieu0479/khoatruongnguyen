@@ -5,7 +5,7 @@ function ComposeComponent() {
     <div>
       <h2>ComposeComponent</h2>
 
-      truong nguyen
+      truong nguyen , hieu, trieu
     </div>
   )
 }
