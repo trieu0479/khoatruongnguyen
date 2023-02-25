@@ -8,7 +8,8 @@ import PageA from './PageA';
 import PageB from './PageB';
 import State from './State';
 import ComposeComponent from './components/ComposeComponent/ComposeComponent';
-
+import HandleEvent from './HandleEvent';
+import ConditionalRendering from './ConditionalRendering';
 
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
@@ -61,6 +62,16 @@ function App() {
       <ComposeComponent />
 
       <p />
+
+      <br />
+      <HandleEvent />
+
+      <br />
+      <ConditionalRendering />
+
+      <br />
+      <br />
+      <br />
     </div>
   );
 }
