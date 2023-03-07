@@ -17,14 +17,12 @@ function LiftingStateUp() {
   ]); // memory A
 
   function handleUpdateStatus(event, todoId) {
-    const clonedTodos = [...todos]; // memory B
-    const todoIndex = todos.findIndex(todo => todo.id === todoId);
+    // const clonedTodos = [...todos]; // memory B // shallow copy
+    const clonedTodos = JSON.parse(JSON.stringify(todos)); // deep copy
+    const todoIndex = clonedTodos.findIndex(todo => todo.id === todoId);
     clonedTodos[todoIndex].completed = event.target.checked; 
-    console.log('handleUpdateStatus: ', clonedTodos)
     setTodos(clonedTodos); 
   }
-
-  console.log('LiftingStateUp: ', todos)
 
   return (
     <div>
