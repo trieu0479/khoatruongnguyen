@@ -1,33 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import StatelessComponent from './StatelessComponent';
-import StatelfulComponents from './StatelfulComponents';
-import Button from './components/Button';
-import PageA from './PageA';
-import PageB from './PageB';
-import State from './State';
-import ComposeComponent from './components/ComposeComponent/ComposeComponent';
-import HandleEvent from './HandleEvent';
-import ConditionalRendering from './ConditionalRendering';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import StatelessComponent from "./StatelessComponent";
+import StatelfulComponents from "./StatelfulComponents";
+import Button from "./components/Button";
+import PageA from "./PageA";
+import PageB from "./PageB";
+import State from "./State";
+import ComposeComponent from "./components/ComposeComponent/ComposeComponent";
+import HandleEvent from "./HandleEvent";
+import ConditionalRendering from "./ConditionalRendering";
 
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
 
   const user = {
-    name: 'anvacs',
-  }
+    name: "anvacs",
+  };
 
   const myElement = (
     <div>
-      <>
-        my element
-      </>
-      <>
-        my element
-      </>
+      <>my element</>
+      <>my element</>
     </div>
-  )
+  );
   // UI
   return (
     <div>
@@ -38,17 +34,11 @@ function App() {
       <div>anvacs</div>
       <div>eqewq</div>
 
-      <StatelessComponent 
-        count={count} 
-        onClick={() => setCount(count + 1)}
-      />
+      <StatelessComponent count={count} onClick={() => setCount(count + 1)} />
 
-      <Button 
-        text="Increment"
-        onClick={() => setCount(count + 1)}
-       />
+      <Button text="Increment" onClick={() => setCount(count + 1)} />
 
-       <StatelfulComponents  />
+      <StatelfulComponents />
 
       <br />
 
