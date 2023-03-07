@@ -11,6 +11,8 @@ import ComposeComponent from "./components/ComposeComponent/ComposeComponent";
 import HandleEvent from "./HandleEvent";
 import ConditionalRendering from "./ConditionalRendering";
 import GuestGreeting from "./components/GuestGreeting/GuestGreeting";
+import List from './List';
+import LiftingStateUp from './LiftingStateUp';
 
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
@@ -62,6 +64,20 @@ function App() {
 
       <br />
       <GuestGreeting />
+      <br />
+
+      <List />
+
+      <br/>
+      <LiftingStateUp />
+      
+
+
+
+      <br />
+      <br />
+      <br />
+      <br />
       <br />
       <br />
     </div>
