@@ -10,6 +10,7 @@ import State from "./State";
 import ComposeComponent from "./components/ComposeComponent/ComposeComponent";
 import HandleEvent from "./HandleEvent";
 import ConditionalRendering from "./ConditionalRendering";
+import GuestGreeting from "./components/GuestGreeting/GuestGreeting";
 
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
@@ -60,6 +61,7 @@ function App() {
       <ConditionalRendering />
 
       <br />
+      <GuestGreeting />
       <br />
       <br />
     </div>
