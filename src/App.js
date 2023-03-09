@@ -13,6 +13,8 @@ import ConditionalRendering from "./ConditionalRendering";
 import GuestGreeting from "./components/GuestGreeting/GuestGreeting";
 import List from './List';
 import LiftingStateUp from './LiftingStateUp';
+import Form from './Form';
+import LifeCycle from './LifeCycle';
 
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
@@ -73,8 +75,15 @@ function App() {
       
 
 
+      <br />
+      <Form />
 
       <br />
+
+      {count === 0 ? <LifeCycle /> : <div>test cleanup</div>}
+
+
+
       <br />
       <br />
       <br />
