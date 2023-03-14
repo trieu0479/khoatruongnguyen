@@ -16,6 +16,9 @@ import LiftingStateUp from "./LiftingStateUp";
 import Form from "./Form";
 import LifeCycle from "./LifeCycle";
 import GenerateBox from "./components/GenerateBox/GenerateBox";
+import UseState from "./UseState";
+
+
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
 
@@ -83,6 +86,11 @@ function App() {
       <br />
       <GenerateBox />
       <br />
+
+      <UseState />
+
+
+
       <br />
       <br />
       <br />
