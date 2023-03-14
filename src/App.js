@@ -11,11 +11,11 @@ import ComposeComponent from "./components/ComposeComponent/ComposeComponent";
 import HandleEvent from "./HandleEvent";
 import ConditionalRendering from "./ConditionalRendering";
 import GuestGreeting from "./components/GuestGreeting/GuestGreeting";
-import List from './List';
-import LiftingStateUp from './LiftingStateUp';
-import Form from './Form';
-import LifeCycle from './LifeCycle';
-
+import List from "./List";
+import LiftingStateUp from "./LiftingStateUp";
+import Form from "./Form";
+import LifeCycle from "./LifeCycle";
+import GenerateBox from "./components/GenerateBox/GenerateBox";
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
 
@@ -70,10 +70,8 @@ function App() {
 
       <List />
 
-      <br/>
+      <br />
       <LiftingStateUp />
-      
-
 
       <br />
       <Form />
@@ -82,9 +80,8 @@ function App() {
 
       {count === 0 ? <LifeCycle /> : <div>test cleanup</div>}
 
-
-
       <br />
+      <GenerateBox />
       <br />
       <br />
       <br />
