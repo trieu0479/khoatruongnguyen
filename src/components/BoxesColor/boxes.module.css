@@ -1,0 +1,39 @@
+.red {
+  background-color: red;
+  height: 44px;
+  width: 80px;
+  text-align: center;
+  margin: 20px 10px 0px 10px;
+  padding-top: 20px;
+  border-radius: 10px;
+}
+.gold {
+  background-color: gold;
+  height: 44px;
+  width: 80px;
+  text-align: center;
+  margin: 20px 10px 0px 10px;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+.aqua {
+  background-color: aqua;
+  height: 44px;
+  width: 80px;
+  text-align: center;
+  margin: 20px 10px 0px 10px;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+.purple {
+  background-color: purple;
+  height: 44px;
+  width: 80px;
+  text-align: center;
+  margin: 20px 10px 0px 10px;
+  border-radius: 10px;
+  padding-top: 20px;
+}
+.boxes {
+  display: flex;
+}

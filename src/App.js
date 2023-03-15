@@ -17,8 +17,7 @@ import Form from "./Form";
 import LifeCycle from "./LifeCycle";
 import GenerateBox from "./components/GenerateBox/GenerateBox";
 import UseState from "./UseState";
-
-
+import BoxesColor from "./components/BoxesColor/BoxesColor";
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
 
@@ -89,9 +88,8 @@ function App() {
 
       <UseState />
 
-
-
       <br />
+      <BoxesColor />
       <br />
       <br />
     </div>
