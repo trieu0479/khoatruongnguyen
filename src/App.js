@@ -17,6 +17,7 @@ import Form from "./Form";
 import LifeCycle from "./LifeCycle";
 import GenerateBox from "./components/GenerateBox/GenerateBox";
 import UseState from "./UseState";
+import UseEffect from "./useEffect";
 
 
 function App() {
@@ -87,8 +88,8 @@ function App() {
       <GenerateBox />
       <br />
 
-      <UseState />
-
+      <br />
+      <UseEffect />
 
 
       <br />
