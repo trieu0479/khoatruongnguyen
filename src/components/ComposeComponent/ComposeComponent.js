@@ -2,6 +2,10 @@ import React from "react";
 
 import Avatar from "../Avatar";
 
+
+// import { useBookContext } from "../../context/BookContext";
+import { useAppContext } from "../../context/AppContext";
+
 function formatDate(date) {
   return date.toLocaleDateString();
 }
@@ -17,6 +21,9 @@ function Text(props) {
 }
 
 function ComposeComponent() {
+  // const bookContext = useBookContext();
+  const { theme, setTheme } = useAppContext();
+
   const [comment, setComment] = React.useState({
     date: new Date(),
     text: "I hope you enjoy learning React!",
@@ -25,6 +32,8 @@ function ComposeComponent() {
       avatarUrl: "http://placekitten.com/g/64/64",
     },
   })
+
+  console.log('ComposeComponent render', { theme })
   return (
     <div className="App">
       <h2>ComposeComponent</h2>
@@ -32,6 +41,10 @@ function ComposeComponent() {
       <UserInfo user={comment.author} />
       <Text text={comment.text} />
       <Datee date={comment.date} />
+
+      <button type="button" onClick={() => setTheme('dark')}>
+        Set Theme
+      </button>
     </div>
   );
 }

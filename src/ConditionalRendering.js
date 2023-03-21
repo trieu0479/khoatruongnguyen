@@ -3,9 +3,15 @@ import React from 'react'
 import ButtonLogin from './components/ButtonLogin';
 import ButtonLogout from './components/ButtonLogout';
 
+// context
+import { useAppContext } from './context/AppContext';
+
 function ConditionalRendering() {
   const todos = [];
   const [isAuth, setIsAuth] = React.useState(false);
+  const { products } = useAppContext();
+
+  console.log('ConditionalRendering render: ', { products })
 
   let renderButton = null;
   if(isAuth) {
@@ -37,4 +43,4 @@ function ConditionalRendering() {
   )
 }
 
-export default ConditionalRendering
+export default React.memo(ConditionalRendering);

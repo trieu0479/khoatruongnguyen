@@ -18,6 +18,7 @@ import LifeCycle from "./LifeCycle";
 import GenerateBox from "./components/GenerateBox/GenerateBox";
 import UseState from "./UseState";
 import UseEffect from "./useEffect";
+import { Book } from './pages/Book';
 
 
 function App() {
@@ -90,6 +91,10 @@ function App() {
 
       <br />
       <UseEffect />
+
+      <br />
+      <br/>
+      <Book />
 
 
       <br />
