@@ -18,6 +18,7 @@ import LifeCycle from "./LifeCycle";
 import GenerateBox from "./components/GenerateBox/GenerateBox";
 import UseState from "./UseState";
 import BoxesColor from "./components/BoxesColor/BoxesColor";
+import Refs from './Refs';
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
 
@@ -90,6 +91,9 @@ function App() {
 
       <br />
       <BoxesColor />
+
+      <br />
+      <Refs />
       <br />
       <br />
     </div>

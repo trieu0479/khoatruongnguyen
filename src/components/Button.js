@@ -2,11 +2,12 @@ import React from 'react'
 
 import myStyles from './button.module.css';
 
-function Button(props) {
+const Button = React.forwardRef((props, ref) => {
   const isAuth = true;
   return (
     <>
       <button 
+        ref={ref}
         type="button" 
         // className={myStyles.button} 
         className={`buttonABC ${isAuth ? 'isAuth' :''} ${myStyles.button}`}  
@@ -16,6 +17,7 @@ function Button(props) {
       </button>
     </>
   )
-}
+})
+
 
 export default Button
