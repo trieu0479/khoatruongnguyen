@@ -19,8 +19,8 @@ import GenerateBox from "./components/GenerateBox/GenerateBox";
 import UseState from "./UseState";
 import UseEffect from "./useEffect";
 import { Book } from './pages/Book';
-
-
+import BoxesColor from "./components/BoxesColor/BoxesColor";
+import Refs from './Refs';
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
 
@@ -96,8 +96,10 @@ function App() {
       <br/>
       <Book />
 
+      <BoxesColor />
 
       <br />
+      <Refs />
       <br />
       <br />
     </div>
