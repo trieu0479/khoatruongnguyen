@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useCallback } from "react";
+import { Link, NavLink, Routes, Route } from "react-router-dom";
 import logo from "./logo.svg";
 import "./App.css";
 import StatelessComponent from "./StatelessComponent";
@@ -21,12 +22,30 @@ import UseEffect from "./useEffect";
 import { Book } from './pages/Book';
 import BoxesColor from "./components/BoxesColor/BoxesColor";
 import Refs from './Refs';
+import MemoComponent from './MemoComponent';
+import Portal from './Portal';
+import About from "./pages/About/About";
+import AboutDetail from "./pages/About/AboutDetail";
+import AboutNew from "./pages/About/AboutNew";
+
 function App() {
   const [count, setCount] = React.useState(0); // local state of component
+  const [user, setUser] = React.useState({
+    name: 'tony',
+    title: 'react'
+  }); // local state of component
 
-  const user = {
-    name: "anvacs",
-  };
+  // first render -> callfunction memory A
+  // next render -> callfunction memory B
+  const callbackFunction = React.useCallback(() => {
+    console.log('test callback function', count) // memories result function
+  }, [count])
+
+  const sum = React.useMemo(() => {
+    return count + 1
+  }, [count])
+
+  console.log('sum useMemo: ', sum)
 
   const myElement = (
     <div>
@@ -34,17 +53,55 @@ function App() {
       <>my element</>
     </div>
   );
+  
   // UI
   return (
     <div>
+      <h2>Menu</h2>
+      <ul>
+        <li><NavLink to="/pageA">Page A</NavLink></li>
+        <li><NavLink to="/pageB">Page B</NavLink></li>
+        <li><NavLink to="/stateless-component">Stateless Component</NavLink></li>
+        <li><NavLink to="/about">About</NavLink></li>
+        <li><NavLink to="/about/12321">About Detail</NavLink></li>
+        <li><NavLink to="/about/news">About News</NavLink></li>
+      </ul>
+
+
+      {/* config route */}
+      <Routes>
+        <Route path="/pageA" element={<PageA />} />
+        <Route path="/pageB" element={<PageB />} />
+        {/* <Route path="/about" element={<About />} />
+        <Route path="/about/news" element={<AboutNew />} />
+        <Route path="/about/:id" element={<AboutDetail />} /> */}
+        <Route path="/about" element={<About />}>
+          <Route path="news" element={<AboutNew />} />
+          <Route path=":id" element={<AboutDetail />} />
+        </Route>
+        <Route 
+          path="/stateless-component" 
+          element={
+            <StatelessComponent count={count} onClick={() => setCount(count + 1)} />
+          } 
+        />
+      </Routes>
+      <br />
+      <hr />
+      <br />
+
+
+      
       <div className="App">
         {myElement} {user.name}
+        <Button text="Update User" onClick={() => {
+          const newUser = { ...user, name: `tony-${Date.now()}` };
+          setUser(newUser)
+        }} />
       </div>
 
       <div>anvacs</div>
       <div>eqewq</div>
-
-      <StatelessComponent count={count} onClick={() => setCount(count + 1)} />
 
       <Button text="Increment" onClick={() => setCount(count + 1)} />
 
@@ -100,6 +157,15 @@ function App() {
 
       <br />
       <Refs />
+
+      <br />
+      <MemoComponent user={user} handleUpdate={callbackFunction} />
+
+      <br />
+
+      <Portal />
+
+
       <br />
       <br />
     </div>
